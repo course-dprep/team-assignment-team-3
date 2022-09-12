@@ -1,4 +1,22 @@
-# Example of reproducible research workflow 
+# Overturning Roe v. Wade and Airbnb market
+
+## Research Question
+How overturning Roe v. Wade differently affect Airbnb’s market (specifically price and number of listing per host) between states that still allow abortion and states that did not in the U.S.? 
+
+IV: time quarter (March-June VS June-September)  
+DV: price, number of listing per host
+Control variables: To be discussed
+dataset scope: To be discussed
+
+## Questions for coaching: 
+1. is this research question a good one? how to improve? 
+2. the dataset of all states in US maybe too large for us, how can we limit our dataset scope? 
+3. our team now has only three members, how to address that?  
+
+
+
+
+
 
 This is a basic example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
 
