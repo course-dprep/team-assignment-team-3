@@ -5,6 +5,7 @@ How overturning Roe v. Wade differently affect Airbnb’s market (specifically p
 
 IV: time quarter (March-June VS June-September)  
 DV: price, number of listing per host
+
 Control variables: To be discussed
 Dataset scope: To be discussed
 
