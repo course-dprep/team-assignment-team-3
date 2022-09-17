@@ -1,10 +1,10 @@
 # Overturning Roe v. Wade and the impact on the Airbnb market
 
 ## Research Question
-How overturning Roe v. Wade differently affect Airbnb’s market (specifically price and number of listing per host) between states that still allow abortion and states that did not in the U.S.? 
+How overturning Roe v. Wade differently affect Airbnb’s market (specifically price) between states that still allow abortion and states that did not in the U.S.? 
 
 IV: time quarter (March-June VS June-September)  
-DV: price, number of listing per host
+DV: price
 
 Control variables: To be discussed
 Dataset scope: To be discussed
