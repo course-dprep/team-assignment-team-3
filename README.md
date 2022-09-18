@@ -35,5 +35,6 @@ However, this difference would also include any change in prices that might have
 In this research the following conceptual model applied:
 
 
-(not the formal one, only use to check if we are on the right<img width="981" alt="截屏2022-09-18 20 16 16" src="https://user-images.githubusercontent.com/112552239/190922313-ce920336-d35d-4ecc-8244-8d2114603c15.png">
- direction) 
+(not the formal one, only use to check if we are on the right direction) 
+<img width="981" alt="截屏2022-09-18 20 16 16" src="https://user-images.githubusercontent.com/112552239/190922313-ce920336-d35d-4ecc-8244-8d2114603c15.png">
+
