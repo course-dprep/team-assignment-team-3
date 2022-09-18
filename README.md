@@ -12,6 +12,11 @@ Dataset scope: To be discussed
 ## Table of contents 
 
 
+# Code Snippet
+![image](https://user-images.githubusercontent.com/111928362/190917551-63fb40b8-3f57-4a04-8f89-f2273d59abf0.png)
+
+*Is this the right direction? Problem is I can get the knit function to run without an error*
+
 ## 1. Research motivation 
 Roe v Wade is an important case that legalized abortion in the US and created national controversy by dividing the country into two. With this lawsuit, abortion was legalized in all states of the USA because it was a constitutional right for women. However, after this decision, the conservative-leaning court made it easier for states to make their own decisions, and it was outlawed again in some states. The impact of such a resounding lawsuit was not limited to national politics but had effects in many areas such as financial, social, health and tourism. 
 
