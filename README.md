@@ -13,6 +13,7 @@ Dataset scope: To be discussed
 
 
 # Code Snippet
+see src/data prepation/NYC_prepa for an updated version 
 ![image](https://user-images.githubusercontent.com/111928362/190917551-63fb40b8-3f57-4a04-8f89-f2273d59abf0.png)
 
 *Is this the right direction? Problem is I can get the knit function to run without an error*
