@@ -33,3 +33,7 @@ In order to understand the effect of the over-turning of the Roe v. Wade case on
 However, this difference would also include any change in prices that might have occurred even in the absence of the policy intervention. Therefore, we use a difference-in-differences (DID) specification by comparing the price changes in States where abortion is banned (i.e., the treated state) versus those  states where abortion is still legal (the control states). 
 
 In this research the following conceptual model applied:
+
+
+(not the formal one, only use to check if we are on the right<img width="981" alt="截屏2022-09-18 20 16 16" src="https://user-images.githubusercontent.com/112552239/190922313-ce920336-d35d-4ecc-8244-8d2114603c15.png">
+ direction) 
