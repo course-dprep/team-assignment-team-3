@@ -23,6 +23,10 @@ Roe v Wade is an important case that legalized abortion in the US and created na
 
 This research will explore and analyze how Roe v Wade impacted the Airbnb market within different states. It will be studied whether there is a correlation between the variables such as prices and reviews of hosts between states where abortion is legal and not. The latest data Airbnb offers will be used.  It will be interesting to examine the effects of the lawsuit on Airbnb, which is not operating in an area first to come to mind in the abortion debate.
 
+## URL list 
+https://docs.google.com/spreadsheets/d/1djJF077RyMSR5B-l6QfAJ8QyeljX5NErwlwnbjV4gLg/edit?usp=sharing
+
+
 ## 7. Research method
 To address the aforementioned research question multiple AirBnB datasets, derived from InsideAirbnb, are combined to one big dataset containing data from 31 cities (19 States) in the United States: Los Angeles, Oakland, Pacific Grove, San Diego, San Francisco, San Mateo County, Santa Clara County, Santa Cruz County, Denver, Washington, D.C., Broward County, Hawaii, Chicago, New Orleans, Boston, Cambridge, Twin Cities MSA , Clark County, NV, Newark, Jersey City, New York City, Asheville, Columbus, Portland , Salem, OR, Rhode Island, Nashville, Austin, Dallas, Fort Worth, Seattle .
 
