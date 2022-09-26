@@ -1,0 +1,106 @@
+---
+title: "Data preparation"
+output: html_document
+date: '2022-09-18'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+## Load packages
+library(dplyr)
+library(googlesheets4)
+ 
+## Importing Google Sheet as CSV in R.
+gs4_deauth()
+df <- read_sheet("https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0")
+df
+head(df)
+url <- as.character(df$url)
+ 
+ 
+## Reading datasets for all cities
+tbl <- lapply(url, function(url) {
+  print(paste0('Now downloading ... ', url))
+  d <- read.csv(url)
+  city = tolower(as.character(df$city[match(url, df$url)]))
+  d$city <- city
+  states = as.character(df$states[match(url, df$url)])
+  d$states <- states
+  time = df$time[match(url, df$url)]
+  d$time <- time
+  return(d)
+})
+```
+
+
+```{r}
+## Combining data into a single data frame
+combined_data = do.call('rbind', tbl)
+head(combined_data)
+glimpse(combined_data)
+combined_data <- subset(combined_data, select = -c( 2, 4:9, 11:18))
+```
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+## Combining data into a single data frame
+combined_data = do.call('rbind', tbl)
+head(combined_data)
+glimpse(combined_data)
+
+
+combined_data1 <- lapply(combined_data, function(x) x %>% group_by(host_id)%>%summarise(price,time,city, states)) %>% bind_rows()
+
+## Writing data into csv file and creating directory if nonexistent
+if (!dir.exists("../../gen")) {
+  dir.create("../../gen")
+} else {
+  print("Directory already exists!")
+}
+
+if (!dir.exists("../../gen/temp")) {
+  dir.create("../../gen/temp")
+} else {
+  print("Directory already exists!")
+}
+write.csv(combined_data,
+          paste0("../../gen/temp/combined_city_data.csv"),
+          row.names = F)
+
+```
+
+
+
+
+```{r}
+## original code
+
+urls = c('http://data.insideairbnb.com/united-states/ny/new-york-city/2022-06-03/visualisations/listings.csv', 'http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/visualisations/listings.csv')
+
+data <- lapply(urls, read.csv) # lower case variable names, use "general variable names" (e.g., df, data)
+```
+
+```{r}
+##
+data[[1]]$time<-0
+data[[2]]$time<-1
+
+data1 <- lapply(data, function(x) x %>% group_by(host_id)%>%summarise(price,time)) %>% bind_rows()
+
+## still need a column "state" and a column "city" (how to automate this process?)
+```
+
+
+```{r}
+
+```
+
