@@ -13,7 +13,7 @@ Dataset scope: To be discussed
 
 
 # Code Snippet
-see src/data prepation/NYC_prepa for an updated version 
+see src/data prepation/data_preparation for an updated version 
 
 
 
@@ -23,7 +23,7 @@ Roe v Wade is an important case that legalized abortion in the US and created na
 This research will explore and analyze how Roe v Wade impacted the Airbnb market within different states. It will be studied whether there is a correlation between the variables such as prices and reviews of hosts between states where abortion is legal and not. The latest data Airbnb offers will be used.  It will be interesting to examine the effects of the lawsuit on Airbnb, which is not operating in an area first to come to mind in the abortion debate.
 
 ## URL list 
-https://docs.google.com/spreadsheets/d/1djJF077RyMSR5B-l6QfAJ8QyeljX5NErwlwnbjV4gLg/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0
 
 
 ## 7. Research method
