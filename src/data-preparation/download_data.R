@@ -27,5 +27,3 @@ tbl <- lapply(url, function(url) {
 # Combining the data into a single data frame
 combined_data = do.call('rbind', tbl)
 head(combined_data)
-glimpse(combined_data)
-
