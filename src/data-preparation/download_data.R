@@ -26,4 +26,5 @@ tbl <- lapply(url, function(url) {
 
 # Combining the data into a single data frame
 combined_data = do.call('rbind', tbl)
-head(combined_data)
+# Delete unwanted columns
+combined_data1 <- subset(combined_data, select = c("host_id", "price", "city", "states", "time", "category"))
