@@ -4,7 +4,7 @@
 library(dplyr)
 
 # Load merged data 
-load("./gen/temp/combined_data")
+comibined_data <- read.csv(file = "../../gen/temp/combined_data.csv")
 
 # Filter the combined data and store it as a new data without unwanted columns
 combined_data1 <- subset(combined_data, select = c("host_id", "price", "city", "states", "time", "category"))
@@ -13,9 +13,13 @@ combined_data1 <- subset(combined_data, select = c("host_id", "price", "city", "
 combined_data1$category1 <- ifelse(combined_data1$category == "Legal", 0, 1)
 head(combined_data)
 
+write.csv(combined_data1, '../../gen/temp/combined_data1.csv')
+
 ## aggregate data to state level 
 options(dplyr.summarise.inform = FALSE)
 df_grouped <- combined_data1 %>%
   group_by(states, time, category) %>%
   summarise(avg_price = mean(price))
 df_grouped
+
+write.csv(df_grouped, '../../gen/temp/df_grouped.csv')

@@ -8,6 +8,7 @@ library(googlesheets4)
 gs4_deauth()
 df <- read_sheet("https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0")
 url <- as.character(df$url)
+write.csv(df, '../../data/airbnb_listings.csv')
 
 # Reading the datasets for all cities
 tbl <- lapply(url, function(url) {
@@ -24,5 +25,7 @@ tbl <- lapply(url, function(url) {
   return(d)
 })
 
-# Combining the data into a single data frame
+# Combining the data into a single data frame and saving it 
 combined_data = do.call('rbind', tbl)
+
+write.csv(combined_data, '../../gen/temp/combined_data.csv')

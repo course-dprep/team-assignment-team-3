@@ -1,16 +1,20 @@
 DATA = ../../data 
 TEMP = ../../gen/temp 
 
-all: $(DATA)/listings $(TEMP)/combined_data $(TEMP)/combined_data1
+all: $(DATA)/airbnb_listings.csv $(TEMP)/combined_data.csv $(TEMP)/combined_data1.csv $(TEMP)/df_grouped.csv
 
-$(DATA)/listings.csv: download.R
+$(DATA)/airbnb_listings.csv: download_data.R
 	mkdir -p $(DATA)
-	R --vanilla < download.R
+	R --vanilla < download_data.R
 
-$(TEMP)/combined_data: download.R
+$(TEMP)/combined_data.csv: download_data.R
 	mkdir -p $(TEMP)
-	R --vanilla < download.R
-	
-$(TEMP)/combined_data1: $(TEMP)/combined_data clean.R
+	R --vanilla < download_data.R
+
+$(TEMP)/combined_data1.csv: clean_data.R
 	mkdir - p $(TEMP)
-	R --vanilla < clean.R
+	R --vanilla < clean_data.R
+	
+$(TEMP)/df_grouped.csv: $(TEMP)/combined_data.csv $(TEMP)/combined_data1.csv clean_data.R
+	mkdir - p $(TEMP)
+	R --vanilla < clean_data.R
