@@ -14,8 +14,9 @@ summary(didreg)
 didreg1 = lm(price ~ category1*time, data = combined_data1)
 summary(didreg1)
 
-
-# Calculate the mean prices before the overturning
-mean_price_before_legal <- combined_data1 %>% filter(time == 0 & category1 == 0) %>% mean(combined_data1$price)
-
-# Calculate the mean prices after the overturning
+# plot and store results
+pdf(file="../../gen/output/figure1")
+p<-ggplot(df_grouped, aes(x=time, y=avg_price, group=category1)) +
+  geom_line(aes(color=category1))+
+  geom_point(aes(color=category1))
+dev.off()
