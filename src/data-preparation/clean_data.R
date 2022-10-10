@@ -4,7 +4,7 @@
 library(dplyr)
 
 # Load merged data 
-comibined_data <- read.csv(file = "../../gen/temp/combined_data.csv")
+combined_data <- read.csv(file = "../../gen/temp/combined_data.csv")
 
 # Filter the combined data and store it as a new data without unwanted columns
 combined_data1 <- subset(combined_data, select = c("host_id", "price", "city", "states", "time", "category"))
