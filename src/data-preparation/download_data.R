@@ -3,6 +3,7 @@
 # Loading packages
 library(dplyr)
 library(googlesheets4)
+dir.create('../../data')
 
 # Importing the Google Sheet in R.
 gs4_deauth()
@@ -27,5 +28,5 @@ tbl <- lapply(url, function(url) {
 
 # Combining the data into a single data frame and saving it 
 combined_data = do.call('rbind', tbl)
-
+dir.create('../../gen/temp/', recursive=T)
 write.csv(combined_data, '../../gen/temp/combined_data.csv')
