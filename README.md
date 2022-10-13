@@ -1,13 +1,10 @@
 # Overturning Roe v. Wade and the impact on the Airbnb market
 
 ## Research Question
-How overturning Roe v. Wade differently affect Airbnb’s market (specifically price) between states that still allow abortion and states that did not in the U.S.? 
+How does the overturning of Roe v. Wade affect Airbnb's market (precisely price) between the states that still allow abortion and those that do not within the United States?
 
 IV: time quarter (March-June VS June-September)  
 DV: price
-
-Control variables: To be discussed
-Dataset scope: To be discussed
 
 ## Table of contents 
 
@@ -18,9 +15,11 @@ see src/data prepation/data_preparation for an updated version
 
 
 ## 1. Research motivation 
-Roe v Wade is an important case that legalized abortion in the US and created national controversy by dividing the country into two. With this lawsuit, abortion was legalized in all states of the USA because it was a constitutional right for women. However, after this decision, the conservative-leaning court made it easier for states to make their own decisions, and it was outlawed again in some states. The impact of such a resounding lawsuit was not limited to national politics but had effects in many areas such as financial, social, health and tourism. 
+Roe v Wade was a critical case that legalised abortion in all the states of the United States. Unfortunately, though, it did create national controversy and divided the country into two parties: pro-abortion vs pro-life, with this last party getting what it wanted last June. The overturning of Roe v Wade. 
 
-This research will explore and analyze how Roe v Wade impacted the Airbnb market within different states. It will be studied whether there is a correlation between the variables such as prices and reviews of hosts between states where abortion is legal and not. The latest data Airbnb offers will be used.  It will be interesting to examine the effects of the lawsuit on Airbnb, which is not operating in an area first to come to mind in the abortion debate.
+After this decision, states could now again make their own laws about abortion, resulting in abolishment in some states. The impact of this resounding lawsuit was not only limited to national politics but also affected many areas such as finance, social, health and tourism. 
+
+This research will explore and analyse how Roe v Wade impacted the Airbnb market within different states. There will be looked at whether there is a correlation between price and in which state the rental can be booked. Is abortion legal or not? The latest data Airbnb offers will be used. It will be interesting to examine the effects of the lawsuit on Airbnb, as it is not what first comes to mind in the abortion debate.  
 
 ## URL list 
 https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0
