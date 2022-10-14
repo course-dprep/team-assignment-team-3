@@ -52,13 +52,17 @@ summary(didreg1)
 
 
 # Visualiazation 
+combined_data1$category1 <- as.factor(combined_data1$category1)
 plot_price<-ggplot(df_grouped, aes(x=time, y=avg_price, group=category1)) +
   geom_line(aes(color=category1))+
   geom_point(aes(color=category1))
 plot_price
 
-## OUTPUT ##
+
+# OUTPUT 
 dev.off()
 ggsave(plot = plot_price, filename = "../../gen/output/plot_price.pdf")
 ggsave(plot = price_boxplot, filename = "../../gen/output/price_boxplot.pdf")
+
+
 
