@@ -10,8 +10,8 @@ library(ggplot2)
 library(ggpubr)
 
 # INPUT: Load the final merged data 
-combined_data1 <- read.csv("gen/temp/combined_data1.csv")
-df_grouped <- read.csv("gen/temp/df_grouped.csv")
+combined_data1 <- read.csv("../../gen/temp/combined_data1.csv")
+df_grouped <- read.csv("../../gen/temp/df_grouped.csv")
 
 # Assumptions (normality and outliers)
 set.seed(5000)
@@ -60,7 +60,6 @@ plot_price
 
 
 # OUTPUT 
-dev.off()
 ggsave(plot = plot_price, filename = "../../gen/output/plot_price.pdf")
 ggsave(plot = price_boxplot, filename = "../../gen/output/price_boxplot.pdf")
 

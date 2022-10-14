@@ -15,7 +15,6 @@ dir.create('../../gen/temp/', recursive=T)
 gs4_deauth()
 df <- read_sheet("https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0")
 url <- as.character(df$url)
-write.csv(df, '../../data/airbnb_listings.csv')
 
 # Reading the datasets for all cities
 tbl <- lapply(url, function(url) {
@@ -36,4 +35,5 @@ tbl <- lapply(url, function(url) {
 combined_data = do.call('rbind', tbl)
 
 # OUTPUT 
+write.csv(df, '../../data/airbnb_listings.csv')
 write.csv(combined_data, '../../gen/temp/combined_data.csv')
