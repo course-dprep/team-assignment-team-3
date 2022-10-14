@@ -6,12 +6,15 @@ How does the overturning of Roe v. Wade affect Airbnb's market (precisely price)
 IV: time quarter (March-June VS June-September)  
 DV: price
 
+
 ## Table of contents 
-
-
-# Code Snippet
-see src/data prepation/data_preparation for an updated version 
-
+1. Research motivation
+2. Setup of the repository
+3. Repository overview
+4. Software setup
+5. Running instrction
+6. Research method
+7. Conclusion
 
 
 ## 1. Research motivation 
@@ -23,6 +26,17 @@ This research will explore and analyse how Roe v Wade impacted the Airbnb market
 
 ## URL list 
 https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0
+
+
+
+## 4. Software setup
+
+Download R-packages: dplyr, googlesheets4, ggplot2, ggpubr.
+Install GNU make: To install GNU make (both Mac and Windows users) go to this link: "https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/."
+
+
+## 5. Running instruction 
+This repository contains a complete pipeline of downloading data, data exploration, data preparation and analyses. Therefore, as a first step make sure you've cloned the repository onto your own laptop/pc. The complete pipeline is automated using "GNU make". To run this pipeline, you first need to have installed "GNU make" (see Software Setup: install GNU make). After you have done this, you open your Command Prompt (Windows) or Terminal (Mac), move to the folder "Airbnb-vs.-Corona-Pandemic" using cd and run "make". The final output can be found in the "output" folder located in the "gen/analysis" folder.
 
 
 ## 7. Research method
@@ -38,6 +52,7 @@ However, this difference would also include any change in prices that might have
 In this research the following conceptual model applied:
 
 
-(not the formal one, only use to check if we are on the right direction) 
-<img width="981" alt="截屏2022-09-18 20 16 16" src="https://user-images.githubusercontent.com/112552239/190922313-ce920336-d35d-4ecc-8244-8d2114603c15.png">
+Detailed definitions of the analyzed variables are listed below.
+
+
 
