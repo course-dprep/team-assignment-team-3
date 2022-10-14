@@ -24,9 +24,6 @@ price_boxplot <- ggboxplot(combined_data1, x="time", y="price",
 price_boxplot
 
 
-# make cotegory as factor
-combined_data1$category1 <- as.factor(combined_data1$category1)
-df_grouped$category1 <- as.factor(df_grouped$category1)
 
 # Create an interaction between time and category1. We will call this interaction 'did'
 combined_data1$did <- combined_data1$time * combined_data1$category1
@@ -58,13 +55,10 @@ summary(didreg1)
 plot_price<-ggplot(df_grouped, aes(x=time, y=avg_price, group=category1)) +
   geom_line(aes(color=category1))+
   geom_point(aes(color=category1))
-
+plot_price
 
 ## OUTPUT ##
-pdf(file="../../gen/analysis/output/plot_price.pdf")
 dev.off()
 ggsave(plot = plot_price, filename = "../../gen/output/plot_price.pdf")
 ggsave(plot = price_boxplot, filename = "../../gen/output/price_boxplot.pdf")
-
-
 
