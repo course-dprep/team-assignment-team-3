@@ -19,7 +19,7 @@ head(combined_data)
 # aggregate data to state level 
 options(dplyr.summarise.inform = FALSE)
 df_grouped <- combined_data1 %>%
-  group_by(states, time, category) %>%
+  group_by(states, time, category1) %>%
   summarise(avg_price = mean(price))
 df_grouped
 
