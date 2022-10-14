@@ -39,7 +39,7 @@ Install GNU make: To install GNU make (both Mac and Windows users) go to this li
 This repository contains a complete pipeline of downloading data, data exploration, data preparation and analyses. Therefore, as a first step make sure you've cloned the repository onto your own laptop/pc. The complete pipeline is automated using "GNU make". To run this pipeline, you first need to have installed "GNU make" (see Software Setup: install GNU make). After you have done this, you open your Command Prompt (Windows) or Terminal (Mac), move to the folder "roevwade-airbnb" using cd and run "make". The final output can be found in the "output" folder located in the "gen/analysis" folder.
 
 
-## 7. Research method
+## 6. Research method
 To address the aforementioned research question multiple AirBnB datasets, derived from InsideAirbnb, are combined to one big dataset containing data from 31 cities (19 States) in the United States: Los Angeles, Oakland, Pacific Grove, San Diego, San Francisco, San Mateo County, Santa Clara County, Santa Cruz County, Denver, Washington, D.C., Broward County, Hawaii, Chicago, New Orleans, Boston, Cambridge, Twin Cities MSA , Clark County, NV, Newark, Jersey City, New York City, Asheville, Columbus, Portland , Salem, OR, Rhode Island, Nashville, Austin, Dallas, Fort Worth, Seattle .
 
 In total 62 different datasets are combined, each containing information per quarter.
@@ -54,5 +54,14 @@ In this research the following conceptual model applied:
 
 Detailed definitions of the analyzed variables are listed below.
 
-
+|Variable                        |Description                                 |
+|--------------------------------|--------------------------------------------|
+|host_id                         |Airbnb's unique identifier for the host/user|
+|price                           |Daily price in local currency               |
+|city                            |City that a listing is situated             |
+|states                          |State in which a listing is situated        |
+|category                        |Whether abortion is legal in that state     |
+|time                            |a dummy variable denotes whether the list is before or after overturning Roe v wade|
+|number_of_reviews               |Total amount of reviews a listing has       |
+|avg_price                       |Average price of the whole states in local currency|
 
