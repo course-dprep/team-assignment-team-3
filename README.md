@@ -36,7 +36,7 @@ Install GNU make: To install GNU make (both Mac and Windows users) go to this li
 
 
 ## 5. Running instruction 
-This repository contains a complete pipeline of downloading data, data exploration, data preparation and analyses. Therefore, as a first step make sure you've cloned the repository onto your own laptop/pc. The complete pipeline is automated using "GNU make". To run this pipeline, you first need to have installed "GNU make" (see Software Setup: install GNU make). After you have done this, you open your Command Prompt (Windows) or Terminal (Mac), move to the folder "Airbnb-vs.-Corona-Pandemic" using cd and run "make". The final output can be found in the "output" folder located in the "gen/analysis" folder.
+This repository contains a complete pipeline of downloading data, data exploration, data preparation and analyses. Therefore, as a first step make sure you've cloned the repository onto your own laptop/pc. The complete pipeline is automated using "GNU make". To run this pipeline, you first need to have installed "GNU make" (see Software Setup: install GNU make). After you have done this, you open your Command Prompt (Windows) or Terminal (Mac), move to the folder "roevwade-airbnb" using cd and run "make". The final output can be found in the "output" folder located in the "gen/analysis" folder.
 
 
 ## 7. Research method
