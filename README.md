@@ -65,3 +65,52 @@ Detailed definitions of the analyzed variables are listed below.
 |number_of_reviews               |Total amount of reviews a listing has       |
 |avg_price                       |Average price of the whole states in local currency|
 
+## 7. Conclusion 
+
+Using two level data, we found different results and thus report both results. 
+
+*Using host_id level data:*
+
+We fitted a linear model (estimated using OLS) to predict price with category1 (formula:
+price ~ category1 + time + did). The model explains a statistically significant and very
+weak proportion of variance (R2 = 1.16e-04, F(3, 541203) = 20.98, p < .001, adj. R2 =
+1.11e-04). The model's intercept, corresponding to category1 = 0, is at 284.73 (95% CI
+[281.31, 288.15], t(541203) = 163.23, p < .001). Within this model:
+
+  - The effect of category1 is statistically significant and negative (beta = -30.94, 95% CI
+[-39.80, -22.08], t(541203) = -6.84, p < .001; Std. beta = -0.01, 95% CI [-0.02,
+-9.54e-03])
+  - The effect of time is statistically non-significant and negative (beta = -3.01, 95% CI
+[-7.77, 1.74], t(541203) = -1.24, p = 0.214; Std. beta = -1.83e-03, 95% CI [-4.72e-03,
+1.06e-03])
+  - The effect of did is statistically significant and positive (beta = 46.73, 95% CI [34.39,
+59.06], t(541203) = 7.43, p < .001; Std. beta = 0.02, 95% CI [0.01, 0.02])
+
+Standardized parameters were obtained by fitting the model on a standardized version of the
+dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald
+t-distribution approximation.
+
+[plot_price.pdf](https://github.com/course-dprep/roevwade-airbnb/files/9792799/plot_price.pdf)
+
+
+*Using aggregated states level data:*
+
+We fitted a linear model (estimated using OLS) to predict avg_price with category1
+(formula: avg_price ~ category1 + time + did). The model explains a statistically not
+significant and very weak proportion of variance (R2 = 4.25e-03, F(3, 34) = 0.05, p =
+0.986, adj. R2 = -0.08). The model's intercept, corresponding to category1 = 0, is at
+252.19 (95% CI [206.84, 297.53], t(34) = 11.30, p < .001). Within this model:
+
+  - The effect of category1 is statistically non-significant and positive (beta = 2.23, 95%
+CI [-111.89, 116.34], t(34) = 0.04, p = 0.969; Std. beta = 9.59e-03, 95% CI [-0.48, 0.50])
+  - The effect of time is statistically non-significant and negative (beta = -2.67, 95% CI
+[-66.80, 61.46], t(34) = -0.08, p = 0.933; Std. beta = -0.02, 95% CI [-0.39, 0.36])
+  - The effect of did is statistically non-significant and positive (beta = 19.04, 95% CI
+[-142.35, 180.43], t(34) = 0.24, p = 0.812; Std. beta = 0.06, 95% CI [-0.45, 0.58])
+
+Standardized parameters were obtained by fitting the model on a standardized version of the
+dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald
+t-distribution approximation.
+
+[plot_price1.pdf](https://github.com/course-dprep/roevwade-airbnb/files/9792800/plot_price1.pdf)
+
