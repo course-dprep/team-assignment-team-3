@@ -9,9 +9,11 @@ dir.create('../../gen/output', recursive = T)
 library(ggplot2)
 library(ggpubr)
 
+
 # INPUT: Load the two final data set: one using host_id level (combined_data1.csv), one using aggregated state level(df_grouped.csv). 
 combined_data1 <- read.csv("../../gen/temp/combined_data1.csv")
 df_grouped <- read.csv("../../gen/temp/df_grouped.csv")
+
 
 # Assumptions (normality and outliers)
 set.seed(5000)
@@ -25,43 +27,51 @@ price_boxplot
 
 
 # host_id level analysis
-## Create an interaction between time and category1. We will call this interaction 'did'
+# Create an interaction between time and category1. We will call this interaction 'did'
 combined_data1$did <- combined_data1$time * combined_data1$category1
 
 
-## Estimate the DID estimator
+# Estimate the DID estimator
 didreg = lm(price ~ category1 + time + did, data = combined_data1)
 summary(didreg)
 
-## Estimate the DID estimator
+# Estimate the DID estimator
 didreg1 = lm(price ~ category1*time, data = combined_data1)
 summary(didreg1)
 
 
 # aggregated state level analysis 
-## Create an interaction between time and category1. We will call this interaction 'did'
+# Create an interaction between time and category1. We will call this interaction 'did'
 df_grouped$did <- df_grouped$time * df_grouped$category1
 
-## Estimate the DID estimator
-didreg = lm(avg_price ~ category1 + time + did, data = df_grouped)
-summary(didreg)
+# Estimate the DID estimator
+didreg2 = lm(avg_price ~ category1 + time + did, data = df_grouped)
+summary(didreg2)
 
-## Estimate the DID estimator
-didreg1 = lm(avg_price ~ category1*time, data = df_grouped)
-summary(didreg1)
+# Estimate the DID estimator
+didreg3 = lm(avg_price ~ category1*time, data = df_grouped)
+summary(didreg3)
 
 
 # Visualiazation 
 combined_data1$category1 <- as.factor(combined_data1$category1)
-plot_price<-ggplot(df_grouped, aes(x=time, y=avg_price, group=category1)) +
-  geom_line(aes(color=category1))+
-  geom_point(aes(color=category1))
+combined_data1$time<- as.factor(combined_data1$time)
+plot_price <- ggboxplot(combined_data1, x = "category1", y = "price", color = "time",
+                         palette = c("#00AFBB", "#E7B800"))
 plot_price
+
+df_grouped$category1 <- as.factor(df_grouped$category1)
+df_grouped$time<- as.factor(df_grouped$time)
+plot_price1 <- ggboxplot(df_grouped, x = "category1", y = "avg_price", color = "time",
+          palette = c("#00AFBB", "#E7B800"))
+plot_price1
 
 
 # OUTPUT 
-ggsave(plot = plot_price, filename = "../../gen/output/plot_price.pdf")
 ggsave(plot = price_boxplot, filename = "../../gen/output/price_boxplot.pdf")
+ggsave(plot = plot_price, filename = "../../gen/output/plot_price.pdf")
+ggsave(plot = plot_price1, filename = "../../gen/output/plot_price1.pdf")
+
 
 
 
