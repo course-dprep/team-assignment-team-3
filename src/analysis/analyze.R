@@ -9,7 +9,7 @@ dir.create('../../gen/output', recursive = T)
 library(ggplot2)
 library(ggpubr)
 
-# INPUT: Load the final merged data 
+# INPUT: Load the two final data set: one using host_id level (combined_data1.csv), one using aggregated state level(df_grouped.csv). 
 combined_data1 <- read.csv("../../gen/temp/combined_data1.csv")
 df_grouped <- read.csv("../../gen/temp/df_grouped.csv")
 
@@ -24,29 +24,29 @@ price_boxplot <- ggboxplot(combined_data1, x="time", y="price",
 price_boxplot
 
 
-
-# Create an interaction between time and category1. We will call this interaction 'did'
+# host_id level analysis
+## Create an interaction between time and category1. We will call this interaction 'did'
 combined_data1$did <- combined_data1$time * combined_data1$category1
 
 
-# Estimate the DID estimator
+## Estimate the DID estimator
 didreg = lm(price ~ category1 + time + did, data = combined_data1)
 summary(didreg)
 
-# Estimate the DID estimator
+## Estimate the DID estimator
 didreg1 = lm(price ~ category1*time, data = combined_data1)
 summary(didreg1)
 
 
-
-# Create an interaction between time and category1. We will call this interaction 'did'
+# aggregated state level analysis 
+## Create an interaction between time and category1. We will call this interaction 'did'
 df_grouped$did <- df_grouped$time * df_grouped$category1
 
-# Estimate the DID estimator
+## Estimate the DID estimator
 didreg = lm(avg_price ~ category1 + time + did, data = df_grouped)
 summary(didreg)
 
-# Estimate the DID estimator
+## Estimate the DID estimator
 didreg1 = lm(avg_price ~ category1*time, data = df_grouped)
 summary(didreg1)
 
