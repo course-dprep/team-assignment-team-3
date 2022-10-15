@@ -27,20 +27,24 @@ How does the overturning of Roe v. Wade affect Airbnb's market (precisely price)
 •	IV: time quarter (March-June VS June-September)  
 •	DV: price
 
-## URL list 
+## URL list
 https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0
 
 ## 2. Setup of the repository
-image.png
+
 
 ## 3. Repository overview
 Several folders and files are located within the main folder "roevwade-airbnb". These are: ".gitignore", "README.md", and the general makefile. After running make, three other folders will be visible in this main folder: data, gen and src.
+
 •	The "data" folder holds the raw data (airbnb_listings.csv) after running make.
+
 •	The "gen" folder consists of two subfolders named "temp" and "output". In the gen/temp, temporary datasets (combined_data.csv, combined_data1.csv, df_grouped.csv) are stored. In gen/output, the final plots (price_boxplot.pdf, plot_price.pdf, plot_price1.pdf) can be found.
+
 •	The "src" folder consists of two subfolders: analysis and data-preparation, and the file "clean-up.R". In src/analysis, the R-script to run the analyses (analyze.R) and the related makefile can be found. In src/data_preparation, the following files can be found: the R-script to download the data from InsideAirbnb (download_data.R), the R-script to clean the data (clean_data.R), and the related makefile. 
 
 ## 4. Software setup
 •	Download R-packages: dplyr, googlesheets4, ggplot2, ggpubr.
+
 •	Install GNU make: To install GNU make (both Mac and Windows users) go to this link: "https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/make/."
 
 ## 5. Running instruction 
