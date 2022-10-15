@@ -43,13 +43,13 @@ This repository contains a complete pipeline of downloading data, data explorati
 To address the aforementioned research question multiple AirBnB datasets, derived from InsideAirbnb, are combined to one big dataset containing data from 31 cities (19 States) in the United States: Los Angeles, Oakland, Pacific Grove, San Diego, San Francisco, San Mateo County, Santa Clara County, Santa Cruz County, Denver, Washington, D.C., Broward County, Hawaii, Chicago, New Orleans, Boston, Cambridge, Twin Cities MSA , Clark County, NV, Newark, Jersey City, New York City, Asheville, Columbus, Portland , Salem, OR, Rhode Island, Nashville, Austin, Dallas, Fort Worth, Seattle .
 
 In total 62 different datasets are combined, each containing information per quarter.
-However, the raw dataset contains lots of information, of which many is not needed to address the research question this repository is dedicated to. Therefore the data is cleaned and prepared for analyses. For more information about this read: ____________ (to be added README) 
+However, the raw dataset contains lots of information, of which many is not needed to address the research question this repository is dedicated to. Therefore the data is cleaned and prepared for analyses. 
 
 In order to understand the effect of the over-turning of the Roe v. Wade case on Airbnb market, we exploit the idea that, although some states such as Texas banned abortion following the Supreme Court’s decision,  some other states did not. Specifically, we consider how average price of airbnb fluctuate——subsequent to the decision. 
 
 However, this difference would also include any change in prices that might have occurred even in the absence of the policy intervention. Therefore, we use a difference-in-differences (DID) specification by comparing the price changes in States where abortion is banned (i.e., the treated state) versus those  states where abortion is still legal (the control states). 
 
-In this research the following conceptual model applied:
+
 
 
 Detailed definitions of the analyzed variables are listed below.
@@ -65,52 +65,34 @@ Detailed definitions of the analyzed variables are listed below.
 |number_of_reviews               |Total amount of reviews a listing has       |
 |avg_price                       |Average price of the whole states in local currency|
 
+
 ## 7. Conclusion 
 
 Using two level data, we found different results and thus report both results. 
 
-*Using host_id level data:*
+### Using host_id level data:
 
-We fitted a linear model (estimated using OLS) to predict price with category1 (formula:
-price ~ category1 + time + did). The model explains a statistically significant and very
-weak proportion of variance (R2 = 1.16e-04, F(3, 541203) = 20.98, p < .001, adj. R2 =
-1.11e-04). The model's intercept, corresponding to category1 = 0, is at 284.73 (95% CI
-[281.31, 288.15], t(541203) = 163.23, p < .001). Within this model:
+We fitted a linear model (estimated using OLS) to predict price with category1 (formula: price ~ category1 + time + did). The model explains a statistically significant and very weak proportion of variance (R2 = 1.16e-04, F(3, 541203) = 20.98, p < .001, adj. R2 = 1.11e-04). The model's intercept, corresponding to category1 = 0, is at 284.73 (95% CI [281.31, 288.15], t(541203) = 163.23, p < .001). Within this model:
 
-  - The effect of category1 is statistically significant and negative (beta = -30.94, 95% CI
-[-39.80, -22.08], t(541203) = -6.84, p < .001; Std. beta = -0.01, 95% CI [-0.02,
--9.54e-03])
-  - The effect of time is statistically non-significant and negative (beta = -3.01, 95% CI
-[-7.77, 1.74], t(541203) = -1.24, p = 0.214; Std. beta = -1.83e-03, 95% CI [-4.72e-03,
-1.06e-03])
-  - The effect of did is statistically significant and positive (beta = 46.73, 95% CI [34.39,
-59.06], t(541203) = 7.43, p < .001; Std. beta = 0.02, 95% CI [0.01, 0.02])
+  - The effect of category1 is statistically significant and negative (beta = -30.94, 95% CI [-39.80, -22.08], t(541203) = -6.84, p < .001; Std. beta = -0.01, 95% CI [-0.02, -9.54e-03])
+  - The effect of time is statistically non-significant and negative (beta = -3.01, 95% CI [-7.77, 1.74], t(541203) = -1.24, p = 0.214; Std. beta = -1.83e-03, 95% CI [-4.72e-03, 1.06e-03])
+  - The effect of did is statistically significant and positive (beta = 46.73, 95% CI [34.39, 59.06], t(541203) = 7.43, p < .001; Std. beta = 0.02, 95% CI [0.01, 0.02])
 
-Standardized parameters were obtained by fitting the model on a standardized version of the
-dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald
-t-distribution approximation.
-
-[plot_price.pdf](https://github.com/course-dprep/roevwade-airbnb/files/9792799/plot_price.pdf)
+Standardized parameters were obtained by fitting the model on a standardized version of the dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald t-distribution approximation.
 
 
-*Using aggregated states level data:*
+<img width="651" alt="截屏2022-10-15 20 12 08" src="https://user-images.githubusercontent.com/112552239/196001987-f555850f-87fb-4de4-95e2-9a91863ce3f9.png">
 
-We fitted a linear model (estimated using OLS) to predict avg_price with category1
-(formula: avg_price ~ category1 + time + did). The model explains a statistically not
-significant and very weak proportion of variance (R2 = 4.25e-03, F(3, 34) = 0.05, p =
-0.986, adj. R2 = -0.08). The model's intercept, corresponding to category1 = 0, is at
-252.19 (95% CI [206.84, 297.53], t(34) = 11.30, p < .001). Within this model:
 
-  - The effect of category1 is statistically non-significant and positive (beta = 2.23, 95%
-CI [-111.89, 116.34], t(34) = 0.04, p = 0.969; Std. beta = 9.59e-03, 95% CI [-0.48, 0.50])
-  - The effect of time is statistically non-significant and negative (beta = -2.67, 95% CI
-[-66.80, 61.46], t(34) = -0.08, p = 0.933; Std. beta = -0.02, 95% CI [-0.39, 0.36])
-  - The effect of did is statistically non-significant and positive (beta = 19.04, 95% CI
-[-142.35, 180.43], t(34) = 0.24, p = 0.812; Std. beta = 0.06, 95% CI [-0.45, 0.58])
+### Using aggregated states level data:
 
-Standardized parameters were obtained by fitting the model on a standardized version of the
-dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald
-t-distribution approximation.
+We fitted a linear model (estimated using OLS) to predict avg_price with category1 (formula: avg_price ~ category1 + time + did). The model explains a statistically not significant and very weak proportion of variance (R2 = 4.25e-03, F(3, 34) = 0.05, p = 0.986, adj. R2 = -0.08). The model's intercept, corresponding to category1 = 0, is at 252.19 (95% CI [206.84, 297.53], t(34) = 11.30, p < .001). Within this model:
 
-[plot_price1.pdf](https://github.com/course-dprep/roevwade-airbnb/files/9792800/plot_price1.pdf)
+  - The effect of category1 is statistically non-significant and positive (beta = 2.23, 95% CI [-111.89, 116.34], t(34) = 0.04, p = 0.969; Std. beta = 9.59e-03, 95% CI [-0.48, 0.50])
+  - The effect of time is statistically non-significant and negative (beta = -2.67, 95% CI [-66.80, 61.46], t(34) = -0.08, p = 0.933; Std. beta = -0.02, 95% CI [-0.39, 0.36])
+  - The effect of did is statistically non-significant and positive (beta = 19.04, 95% CI [-142.35, 180.43], t(34) = 0.24, p = 0.812; Std. beta = 0.06, 95% CI [-0.45, 0.58])
 
+Standardized parameters were obtained by fitting the model on a standardized version of the dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald t-distribution approximation.
+
+
+<img width="609" alt="截屏2022-10-15 20 12 15" src="https://user-images.githubusercontent.com/112552239/196001995-8d633c54-0f29-44c6-b4ca-adc76cc81680.png">
