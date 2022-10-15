@@ -1,4 +1,3 @@
-DATA=../../data 
 TEMP=../../gen/temp 
 
 all: $(TEMP)/combined_data.csv $(TEMP)/combined_data1.csv $(TEMP)/df_grouped.csv

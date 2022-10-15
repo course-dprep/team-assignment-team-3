@@ -1,8 +1,7 @@
-TEMP = ../../gen/temp
 OUTPUT = = ../../gen/output
 
-all:$(OUTPUT)/plot_price.pdf
+all:$(OUTPUT)/price_boxplotplot.pdf $(OUTPUT)/plot_price.pdf $(OUTPUT)/plot_price1.pdf
 
 
-$(OUTPUT)/plot_price.pdf: analyze.R $(TEMP)/combined_data1.csv $(TEMP)/df_grouped.csv
+$(OUTPUT)/price_boxplotplot.pdf $(OUTPUT)/plot_price.pdf $(OUTPUT)/plot_price1.pdf: analyze.R
 	R --vanilla < analyze.R
