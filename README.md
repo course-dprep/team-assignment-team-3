@@ -71,9 +71,14 @@ Detailed definitions of the analyzed variables are listed below.
 
 
 ## 7. Conclusion 
-Using two level data, we found different results and thus report both results. 
+Using two-level data, we found different results and thus report both results. In both analyses, we observe an increase in the Airbnb price in states where abortion is still legal after overturning Roe v Wade case and a decrease in the Airbnb price in states where abortion is banned after overturning Roe v Wade case. But the difference-in-difference estimator is significant at the host_id level, but not at the state level. 
+
 
 **Using host_id level data**
+The effect of difference-in-difference estimator is statistically significant and positive.
+<img width="638" alt="截屏2022-10-16 13 58 11" src="https://user-images.githubusercontent.com/112552239/196034175-8770220f-42a1-425c-aafc-3fb9c68072bd.png">
+*(Note: "0" in the category1 denotes states in which abortion is banned after overturning Roe v Wade case; "1" in the category1 denotes states in which abortion is still legal after overturning Roe v Wade case. "0" in time represents the quarter March to June, which in our analysis used as before the overturning decision; "1" in time represents the quarter June to September, which in our analysis used as after the overturning decision. )*
+
 
 We fitted a linear model (estimated using OLS) to predict price with category1 (formula: price ~ category1 + time + did). The model explains a statistically significant and very weak proportion of variance (R2 = 1.16e-04, F(3, 541203) = 20.98, p < .001, adj. R2 = 1.11e-04). The model's intercept, corresponding to category1 = 0, is at 284.73 (95% CI [281.31, 288.15], t(541203) = 163.23, p < .001). Within this model:
 
@@ -84,10 +89,12 @@ We fitted a linear model (estimated using OLS) to predict price with category1 (
 Standardized parameters were obtained by fitting the model on a standardized version of the dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald t-distribution approximation.
 
 
-<img width="651" alt="截屏2022-10-15 20 12 08" src="https://user-images.githubusercontent.com/112552239/196001987-f555850f-87fb-4de4-95e2-9a91863ce3f9.png">
-
 
 **Using aggregated states level data**
+The effect of difference-in-difference estimator is statistically non-significant and positive.
+<img width="637" alt="截屏2022-10-16 13 58 19" src="https://user-images.githubusercontent.com/112552239/196034179-46a087ae-2d2d-4867-9194-052f48005514.png">
+*(Note: "0" in the category1 denotes states in which abortion is banned after overturning Roe v Wade case; "1" in the category1 denotes states in which abortion is still legal after overturning Roe v Wade case. "0" in time represents the quarter March to June, which in our analysis used as before the overturning decision; "1" in time represents the quarter June to September, which in our analysis used as after the overturning decision. )*
+
 
 We fitted a linear model (estimated using OLS) to predict avg_price with category1 (formula: avg_price ~ category1 + time + did). The model explains a statistically not significant and very weak proportion of variance (R2 = 4.25e-03, F(3, 34) = 0.05, p = 0.986, adj. R2 = -0.08). The model's intercept, corresponding to category1 = 0, is at 252.19 (95% CI [206.84, 297.53], t(34) = 11.30, p < .001). Within this model:
 
@@ -98,4 +105,4 @@ We fitted a linear model (estimated using OLS) to predict avg_price with categor
 Standardized parameters were obtained by fitting the model on a standardized version of the dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald t-distribution approximation.
 
 
-<img width="609" alt="截屏2022-10-15 20 12 15" src="https://user-images.githubusercontent.com/112552239/196001995-8d633c54-0f29-44c6-b4ca-adc76cc81680.png">
+
