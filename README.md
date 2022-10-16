@@ -27,11 +27,8 @@ How does the overturning of Roe v. Wade affect Airbnb's market (precisely price)
 •	IV: time quarter (March-June VS June-September)  
 •	DV: price
 
-## URL list
-https://docs.google.com/spreadsheets/d/1tOMjx-lflqp-9XC1iGc9tdBIfK-nrOdlsLnFGgLFdVA/edit#gid=0
-
 ## 2. Setup of the repository
-
+![Capture](https://user-images.githubusercontent.com/111928362/196030985-6b098292-3848-4853-9d56-016a1b488fd3.PNG)
 
 ## 3. Repository overview
 Several folders and files are located within the main folder "roevwade-airbnb". These are: ".gitignore", "README.md", and the general makefile. After running make, three other folders will be visible in this main folder: data, gen and src.
