@@ -71,12 +71,13 @@ Detailed definitions of the analyzed variables are listed below.
 
 
 ## 7. Conclusion 
-Using two-level data, we found different results and thus report both results. In both analyses, we observe an increase in the Airbnb price in states where abortion is still legal after overturning Roe v Wade case and a decrease in the Airbnb price in states where abortion is banned after overturning Roe v Wade case. But the difference-in-difference estimator is significant at the host_id level, but not at the state level. 
+Using two-level data, we found different results and thus report both results. In both analyses, we observe an increase in the Airbnb price in states where abortion is still legal after overturning Roe v Wade case and a decrease in the Airbnb price in states where abortion is banned after overturning Roe v Wade case. But the difference-in-difference estimator is statistically significant at the host_id level, but not at the state level. 
 
 
 **Using host_id level data**
 The effect of difference-in-difference estimator is statistically significant and positive.
 <img width="638" alt="截屏2022-10-16 13 58 11" src="https://user-images.githubusercontent.com/112552239/196034175-8770220f-42a1-425c-aafc-3fb9c68072bd.png">
+
 *(Note: "0" in the category1 denotes states in which abortion is banned after overturning Roe v Wade case; "1" in the category1 denotes states in which abortion is still legal after overturning Roe v Wade case. "0" in time represents the quarter March to June, which in our analysis used as before the overturning decision; "1" in time represents the quarter June to September, which in our analysis used as after the overturning decision. )*
 
 
@@ -93,6 +94,7 @@ Standardized parameters were obtained by fitting the model on a standardized ver
 **Using aggregated states level data**
 The effect of difference-in-difference estimator is statistically non-significant and positive.
 <img width="637" alt="截屏2022-10-16 13 58 19" src="https://user-images.githubusercontent.com/112552239/196034179-46a087ae-2d2d-4867-9194-052f48005514.png">
+
 *(Note: "0" in the category1 denotes states in which abortion is banned after overturning Roe v Wade case; "1" in the category1 denotes states in which abortion is still legal after overturning Roe v Wade case. "0" in time represents the quarter March to June, which in our analysis used as before the overturning decision; "1" in time represents the quarter June to September, which in our analysis used as after the overturning decision. )*
 
 
