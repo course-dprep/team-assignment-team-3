@@ -1,11 +1,28 @@
-# Load merged data 
-load("./gen/data-preparation/temp/data_merged.RData")
+#####################
+# Cleaning the Data #
+#####################
 
-# Drop observations with V1 <= -0.9
-df_cleaned <- df_merged[df_merged$V1 > -0.9,]
+# Loading packages
+library(dplyr)
 
-# Remove V1
-df_cleaned <- df_cleaned[,c(1,2,4:7)]
+# INPUT: Load merged data 
+combined_data <- read.csv(file = "../../gen/temp/combined_data.csv")
 
-# Save cleaned data
-save(df_cleaned,file="./gen/data-preparation/output/data_cleaned.RData")
+# Filter the combined data and store it as a new data without unwanted columns
+combined_data1 <- subset(combined_data, select = c("host_id", "price", "city", "states", "time", "category"))
+
+# Create a dummy variable to identify the states where abortion is legal or not after overturning Roe v wade.  example lets assumed that countries with code 5,6, and 7 were treated (=1). states has the category "Legal" and "Gestational Limit" (abortion is banned after >= 15 weeks of pregnancy) are treated as "legal" (=0); states has the category "Banned" are treated as "banned"(=1) in our analysis. 
+combined_data1$category1 <- ifelse(combined_data1$category == "Legal", 0, 1)
+head(combined_data)
+
+
+# aggregate data to state level 
+options(dplyr.summarise.inform = FALSE)
+df_grouped <- combined_data1 %>%
+  group_by(states, time, category1) %>%
+  summarise(avg_price = mean(price))
+df_grouped
+
+# OUTPUT
+write.csv(combined_data1, '../../gen/temp/combined_data1.csv')
+write.csv(df_grouped, '../../gen/temp/df_grouped.csv')
